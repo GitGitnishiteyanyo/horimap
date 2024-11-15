@@ -248,13 +248,158 @@ class RoomListPage2 extends StatelessWidget {
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.width;
 
-    return ListView(
+    return Scaffold(
+        body: ListView(
       padding: const EdgeInsets.all(8),
       children: <Widget>[
+        SizedBox(
+          height: _height * MyHomepage._tytleTopMarginRatio,
+        ),
         ListTile(
-          title: Text("s202"),
+          title: Text('S201'),
+          onTap: () {
+            MyHomepage.floor = 2;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S202'),
+          onTap: () {
+            MyHomepage.floor = 2;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S203'),
+          onTap: () {
+            MyHomepage.floor = 2;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S204'),
+          onTap: () {
+            MyHomepage.floor = 2;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S205'),
+          onTap: () {
+            MyHomepage.floor = 2;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S206'),
+          onTap: () {
+            MyHomepage.floor = 2;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S301'),
+          onTap: () {
+            MyHomepage.floor = 3;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S302'),
+          onTap: () {
+            MyHomepage.floor = 3;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S303'),
+          onTap: () {
+            MyHomepage.floor = 3;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S304'),
+          onTap: () {
+            MyHomepage.floor = 4;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S305'),
+          onTap: () {
+            MyHomepage.floor = 3;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S306'),
+          onTap: () {
+            MyHomepage.floor = 3;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S401'),
+          onTap: () {
+            MyHomepage.floor = 4;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S402'),
+          onTap: () {
+            MyHomepage.floor = 4;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S403'),
+          onTap: () {
+            MyHomepage.floor = 4;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S404'),
+          onTap: () {
+            MyHomepage.floor = 4;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S405'),
+          onTap: () {
+            MyHomepage.floor = 4;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
+        ),
+        ListTile(
+          title: Text('S406'),
+          onTap: () {
+            MyHomepage.floor = 4;
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MapPage()));
+          },
         ),
       ],
-    );
+    ));
   }
 }
