@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:horimap/rooms.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  static const double _tytleTopMarginRatio = 0.1;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +28,7 @@ class MyHomepage extends StatelessWidget {
   static const double _tytlesize = 0.1;
   static const double _buttonsize = 0.1;
   static int floor = 0;
-  static int list_num = 0;
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -50,9 +53,8 @@ class MyHomepage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                floor = 1;
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage()));
+                    MaterialPageRoute(builder: (context) => MapPage(floor: 1)));
               },
               style: ElevatedButton.styleFrom(),
               child: Text(
@@ -63,9 +65,8 @@ class MyHomepage extends StatelessWidget {
             Spacer(),
             ElevatedButton(
               onPressed: () {
-                floor = 2;
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage()));
+                    MaterialPageRoute(builder: (context) => MapPage(floor: 2)));
               },
               style: ElevatedButton.styleFrom(),
               child: Text(
@@ -76,9 +77,8 @@ class MyHomepage extends StatelessWidget {
             Spacer(),
             ElevatedButton(
               onPressed: () {
-                floor = 3;
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage()));
+                    MaterialPageRoute(builder: (context) => MapPage(floor: 3)));
               },
               style: ElevatedButton.styleFrom(),
               child: Text(
@@ -89,9 +89,8 @@ class MyHomepage extends StatelessWidget {
             Spacer(),
             ElevatedButton(
               onPressed: () {
-                floor = 4;
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage()));
+                    MaterialPageRoute(builder: (context) => MapPage(floor: 4)));
               },
               style: ElevatedButton.styleFrom(),
               child: Text(
@@ -102,9 +101,8 @@ class MyHomepage extends StatelessWidget {
             Spacer(),
             ElevatedButton(
               onPressed: () {
-                floor = 5;
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage()));
+                    MaterialPageRoute(builder: (context) => MapPage(floor: 5)));
               },
               style: ElevatedButton.styleFrom(),
               child: Text(
@@ -146,6 +144,8 @@ class MyHomepage extends StatelessWidget {
 }
 
 class MapPage extends StatelessWidget {
+  final int floor;
+  const MapPage({Key? key, required this.floor}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
@@ -159,11 +159,11 @@ class MapPage extends StatelessWidget {
           SizedBox(
             height: _height * MyHomepage._imageHeightRatio,
           ),
-          if (MyHomepage.floor == 1) Image.asset('images/1f.png'),
-          if (MyHomepage.floor == 2) Image.asset('images/2f.png'),
-          if (MyHomepage.floor == 3) Image.asset('images/3f.png'),
-          if (MyHomepage.floor == 4) Image.asset('images/4f.png'),
-          if (MyHomepage.floor == 5) Image.asset('images/5f.png'),
+          if (floor == 1) Image.asset('images/1f.png'),
+          if (floor == 2) Image.asset('images/2f.png'),
+          if (floor == 3) Image.asset('images/3f.png'),
+          if (floor == 4) Image.asset('images/4f.png'),
+          if (floor == 5) Image.asset('images/5f.png'),
           SizedBox(
             height: _height * MyHomepage._imageBottomRatio,
           ),
@@ -181,6 +181,7 @@ class MapPage extends StatelessWidget {
 }
 
 class RoomListPage extends StatelessWidget {
+  static int list_num = 0;
   @override
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
@@ -193,213 +194,41 @@ class RoomListPage extends StatelessWidget {
           ListTile(
             title: Text('HR教室'),
             onTap: () {
-              MyHomepage.list_num = 1;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => RoomListPage2()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RoomListPage2(roomNUM: 1)));
             },
           ),
           ListTile(
-            title: Text('教科系'),
+            title: Text('特別教室'),
             onTap: () {
-              MyHomepage.list_num = 2;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => RoomListPage2()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RoomListPage2(roomNUM: 2)));
             },
           ),
           ListTile(
             title: Text('事務系'),
             onTap: () {
-              MyHomepage.list_num = 3;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => RoomListPage2()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RoomListPage2(roomNUM: 3)));
             },
           ),
           ListTile(
             title: Text('その他'),
             onTap: () {
-              MyHomepage.list_num = 4;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => RoomListPage2()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RoomListPage2(roomNUM: 4)));
             },
           ),
         ],
       ),
     );
-  }
-}
-
-class ListItemData {
-  ListItemData();
-}
-
-class RoomListPage2 extends StatelessWidget {
-  const RoomListPage2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final List<String> HRrooms = [
-      's201',
-      's202',
-      's203',
-      's204',
-      's205',
-      's206'
-    ];
-    double _height = MediaQuery.of(context).size.height;
-    double _width = MediaQuery.of(context).size.width;
-
-    return Scaffold(
-        body: ListView(
-      padding: const EdgeInsets.all(8),
-      children: <Widget>[
-        SizedBox(
-          height: _height * MyHomepage._tytleTopMarginRatio,
-        ),
-        ListTile(
-          title: Text('S201'),
-          onTap: () {
-            MyHomepage.floor = 2;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S202'),
-          onTap: () {
-            MyHomepage.floor = 2;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S203'),
-          onTap: () {
-            MyHomepage.floor = 2;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S204'),
-          onTap: () {
-            MyHomepage.floor = 2;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S205'),
-          onTap: () {
-            MyHomepage.floor = 2;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S206'),
-          onTap: () {
-            MyHomepage.floor = 2;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S301'),
-          onTap: () {
-            MyHomepage.floor = 3;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S302'),
-          onTap: () {
-            MyHomepage.floor = 3;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S303'),
-          onTap: () {
-            MyHomepage.floor = 3;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S304'),
-          onTap: () {
-            MyHomepage.floor = 4;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S305'),
-          onTap: () {
-            MyHomepage.floor = 3;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S306'),
-          onTap: () {
-            MyHomepage.floor = 3;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S401'),
-          onTap: () {
-            MyHomepage.floor = 4;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S402'),
-          onTap: () {
-            MyHomepage.floor = 4;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S403'),
-          onTap: () {
-            MyHomepage.floor = 4;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S404'),
-          onTap: () {
-            MyHomepage.floor = 4;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S405'),
-          onTap: () {
-            MyHomepage.floor = 4;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-        ListTile(
-          title: Text('S406'),
-          onTap: () {
-            MyHomepage.floor = 4;
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MapPage()));
-          },
-        ),
-      ],
-    ));
   }
 }
