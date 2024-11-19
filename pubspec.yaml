@@ -68,6 +68,56 @@ flutter:
     - images/3f.png
     - images/4f.png
     - images/5f.png
+    - images/Map-Pin.svg
+    - images/ari.jpg
+    - images/ato.jpg
+    - images/atorie.jpg
+    - images/buturi.jpg
+    - images/cai.jpg
+    - images/call.jpg
+    - images/enshu5.jpg
+    - images/enshu6.jpg
+    - images/enshu12.jpg
+    - images/enshu34.jpg
+    - images/enshu78.jpg
+    - images/hihuku.jpg
+    - images/hoken.jpg
+    - images/jimu.jpg
+    - images/jishu.jpg
+    - images/jugyoken.jpg
+    - images/kafe.jpg
+    - images/kagaku.jpg
+    - images/koudo.jpg
+    - images/koutyo.jpg
+    - images/rakomo.jpg
+    - images/s201.jpg
+    - images/s202.jpg
+    - images/s203.jpg
+    - images/s204.jpg
+    - images/s205.jpg
+    - images/s206.jpg
+    - images/s301.jpg
+    - images/s302.jpg
+    - images/s303.jpg
+    - images/s304.jpg
+    - images/s305.jpg
+    - images/s306.jpg
+    - images/s401.jpg
+    - images/s402.jpg
+    - images/s403.jpg
+    - images/s404.jpg
+    - images/s405.jpg
+    - images/s406.jpg
+    - images/seibutu.jpg 
+    - images/shodo.jpg
+    - images/shokuin.jpg 
+    - images/shouho.jpg
+    - images/sinro.jpg
+    - images/sishoku.jpg
+    - images/sizen.jpg
+    - images/tore.jpg 
+    - images/tosho.jpg 
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

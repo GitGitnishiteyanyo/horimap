@@ -9,6 +9,8 @@ void main() {
 class MyApp extends StatelessWidget {
   static const double _tytleTopMarginRatio = 0.1;
 
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,89 +31,106 @@ class MyHomepage extends StatelessWidget {
   static const double _buttonsize = 0.1;
   static int floor = 0;
 
+  const MyHomepage({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    double _height = MediaQuery.of(context).size.height;
-    double _width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('HoriMAP'),
+        title: const Text('HoriMAP'),
       ),
       body: Center(
         child: Column(
           children: [
             SizedBox(
-              height: _height * _tytleTopMarginRatio,
+              height: height * _tytleTopMarginRatio,
             ),
             const Text(
               "HoriMAP",
               style: TextStyle(fontSize: 80.0),
             ),
             SizedBox(
-              height: _height * _tytleBottomRatio,
+              height: height * _tytleBottomRatio,
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage(floor: 1)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const MapPage(floor: "images/1f.png")));
               },
               style: ElevatedButton.styleFrom(),
-              child: Text(
+              child: const Text(
                 '1F',
                 style: TextStyle(fontSize: 30.0),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage(floor: 2)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const MapPage(floor: "images/2f.png")));
               },
               style: ElevatedButton.styleFrom(),
-              child: Text(
+              child: const Text(
                 '2F',
                 style: TextStyle(fontSize: 30.0),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage(floor: 3)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const MapPage(floor: "images/3f.png")));
               },
               style: ElevatedButton.styleFrom(),
-              child: Text(
+              child: const Text(
                 '3F',
                 style: TextStyle(fontSize: 30.0),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage(floor: 4)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const MapPage(floor: "images/4f.png")));
               },
               style: ElevatedButton.styleFrom(),
-              child: Text(
+              child: const Text(
                 '4F',
                 style: TextStyle(fontSize: 30.0),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MapPage(floor: 5)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const MapPage(floor: "images/5f.png")));
               },
               style: ElevatedButton.styleFrom(),
-              child: Text(
+              child: const Text(
                 '5F',
                 style: TextStyle(fontSize: 30.0),
               ),
             ),
             SizedBox(
-              height: _height * _buttonBottomRatio,
+              height: height * _buttonBottomRatio,
             ),
           ],
         ),
@@ -119,18 +138,18 @@ class MyHomepage extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
-              child: Text('Menu'),
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
+              child: Text('Menu'),
             ),
             ListTile(
-              title: Text('検索'),
+              title: const Text('検索'),
               onTap: () {},
             ),
             ListTile(
-              title: Text('教室リスト'),
+              title: const Text('教室リスト'),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => RoomListPage()));
@@ -144,31 +163,27 @@ class MyHomepage extends StatelessWidget {
 }
 
 class MapPage extends StatelessWidget {
-  final int floor;
-  const MapPage({Key? key, required this.floor}) : super(key: key);
+  final String floor;
+  const MapPage({super.key, required this.floor});
   @override
   Widget build(BuildContext context) {
-    double _height = MediaQuery.of(context).size.height;
-    double _width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Next Page'),
+        title: const Text('MAP Page'),
       ),
       body: Center(
         child: Column(children: [
           SizedBox(
-            height: _height * MyHomepage._imageHeightRatio,
+            height: height * MyHomepage._imageHeightRatio,
           ),
-          if (floor == 1) Image.asset('images/1f.png'),
-          if (floor == 2) Image.asset('images/2f.png'),
-          if (floor == 3) Image.asset('images/3f.png'),
-          if (floor == 4) Image.asset('images/4f.png'),
-          if (floor == 5) Image.asset('images/5f.png'),
+          Image.asset(floor),
           SizedBox(
-            height: _height * MyHomepage._imageBottomRatio,
+            height: height * MyHomepage._imageBottomRatio,
           ),
           ElevatedButton(
-            child: Text("前の画面に戻る"),
+            child: const Text("前の画面に戻る"),
             onPressed: () {
               // ここにボタンを押した時に呼ばれるコードを書く
               Navigator.pop(context);
@@ -182,52 +197,78 @@ class MapPage extends StatelessWidget {
 
 class RoomListPage extends StatelessWidget {
   static int list_num = 0;
+
+  const RoomListPage({super.key});
   @override
   Widget build(BuildContext context) {
-    double _height = MediaQuery.of(context).size.height;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Column(
         children: [
           SizedBox(
-            height: _height * MyHomepage._tytleTopMarginRatio,
+            height: height * MyHomepage._tytleTopMarginRatio,
           ),
           ListTile(
-            title: Text('HR教室'),
+            title: const Text("<back"),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          SizedBox(
+            height: height * MyHomepage._tytleTopMarginRatio * 0.3,
+          ),
+          ListTile(
+            title: const Text('HR教室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => RoomListPage2(roomNUM: 1)));
+                      builder: (context) => const RoomListPage2(roomNUM: 1)));
             },
           ),
           ListTile(
-            title: Text('特別教室'),
+            title: const Text('特別教室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => RoomListPage2(roomNUM: 2)));
+                      builder: (context) => const RoomListPage2(roomNUM: 2)));
             },
           ),
           ListTile(
-            title: Text('事務系'),
+            title: const Text('事務系'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => RoomListPage2(roomNUM: 3)));
+                      builder: (context) => const RoomListPage2(roomNUM: 3)));
             },
           ),
           ListTile(
-            title: Text('その他'),
+            title: const Text('その他'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => RoomListPage2(roomNUM: 4)));
+                      builder: (context) => const RoomListPage2(roomNUM: 4)));
             },
           ),
         ],
+      ),
+    );
+  }
+}
+
+class kensaku extends StatelessWidget {
+  static int list_num = 0;
+
+  const kensaku({super.key});
+  @override
+  Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    return Scaffold(
+      body: Column(
+        children: [],
       ),
     );
   }

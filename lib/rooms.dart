@@ -13,551 +13,559 @@ class RoomListPage2 extends StatelessWidget {
   static const double _imageBottomRatio = 0.1;
   static const double _tytlesize = 0.1;
   static const double _buttonsize = 0.1;
-  const RoomListPage2({Key? key, required this.roomNUM}) : super(key: key);
+  const RoomListPage2({super.key, required this.roomNUM});
   @override
   Widget build(BuildContext context) {
-    double _height = MediaQuery.of(context).size.height;
-    double _width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
         body: ListView(
       padding: const EdgeInsets.all(8),
       children: <Widget>[
         SizedBox(
-          height: _height * _tytleTopMarginRatio,
+          height: height * _tytleTopMarginRatio,
+        ),
+        ListTile(
+          title: const Text("<back"),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
+        SizedBox(
+          height: height * _tytleTopMarginRatio * 0.3,
         ),
         if (roomNUM == 1) ...{
           ListTile(
-            title: Text('S201'),
+            title: const Text('S201'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) =>
+                          const MapPage(floor: "images/s201.jpg")));
+            },
+          ),
+          ListTile(
+            title: const Text('S202'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MapPage(
+                            floor: "images/s202.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S202'),
+            title: const Text('S203'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/s203.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S203'),
+            title: const Text('S204'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/s204.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S204'),
+            title: const Text('S205'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/s205.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S205'),
+            title: const Text('S206'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/s206.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S206'),
+            title: const Text('S301'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/s301.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S301'),
+            title: const Text('S302'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/s302.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S302'),
+            title: const Text('S303'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/s303.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S303'),
+            title: const Text('S304'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/s304.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S304'),
+            title: const Text('S305'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/s305.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S305'),
+            title: const Text('S306'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/s306.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S306'),
+            title: const Text('S401'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/s401.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S401'),
+            title: const Text('S402'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 4,
+                      builder: (context) => const MapPage(
+                            floor: "images/s402.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S402'),
+            title: const Text('S403'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 4,
+                      builder: (context) => const MapPage(
+                            floor: "images/s403.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S403'),
+            title: const Text('S404'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 4,
+                      builder: (context) => const MapPage(
+                            floor: "images/s404.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S404'),
+            title: const Text('S405'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 4,
+                      builder: (context) => const MapPage(
+                            floor: "images/s405.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('S405'),
+            title: const Text('S406'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 4,
-                          )));
-            },
-          ),
-          ListTile(
-            title: Text('S406'),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 4,
+                      builder: (context) => const MapPage(
+                            floor: "images/s406.jpg",
                           )));
             },
           ),
         },
         if (roomNUM == 2) ...{
           ListTile(
-            title: Text('生物教室'),
+            title: const Text('生物教室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/seibutu.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('化学教室'),
+            title: const Text('化学教室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/kagaku.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('自然科学教室'),
+            title: const Text('自然科学教室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/sizen.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('物理地学教室'),
+            title: const Text('物理地学教室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/buturi.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('CAI教室'),
+            title: const Text('CAI教室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/cai.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('授業研究室'),
+            title: const Text('授業研究室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/jugyoken.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('CALL教室'),
+            title: const Text('CALL教室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/call.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('被服室'),
+            title: const Text('被服室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/hihuku.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('試食・調理室'),
+            title: const Text('試食・調理室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 3,
+                      builder: (context) => const MapPage(
+                            floor: "images/sishoku.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('アトリエ'),
+            title: const Text('アトリエ'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 5,
+                      builder: (context) => const MapPage(
+                            floor: "images/atorie.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('小ホール'),
+            title: const Text('小ホール'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 5,
+                      builder: (context) => const MapPage(
+                            floor: "images/shouho.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('アリーナ'),
+            title: const Text('アリーナ'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 4,
+                      builder: (context) => const MapPage(
+                            floor: "images/ari.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('書道室・和室'),
+            title: const Text('書道室・和室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/shodo.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('演習室1・2'),
+            title: const Text('演習室1・2'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/enshu12.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('演習室3・4'),
+            title: const Text('演習室3・4'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/enshu34.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('演習室5'),
+            title: const Text('演習室5'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/enshu5.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('演習室6'),
+            title: const Text('演習室6'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/enshu6.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('演習室7・8'),
+            title: const Text('演習室7・8'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/enshu78.jpg",
                           )));
             },
           ),
         },
         if (roomNUM == 3) ...{
           ListTile(
-            title: Text('職員室'),
+            title: const Text('職員室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 1,
+                      builder: (context) => const MapPage(
+                            floor: "images/shokuin.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('事務室'),
+            title: const Text('事務室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 1,
+                      builder: (context) => const MapPage(
+                            floor: "images/jimu.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('進路指導室'),
+            title: const Text('進路資料室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 1,
+                      builder: (context) => const MapPage(
+                            floor: "images/sinro.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('校長室'),
+            title: const Text('校長室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 1,
+                      builder: (context) => const MapPage(
+                            floor: "images/koutyo.jpg",
                           )));
             },
           ),
         },
         if (roomNUM == 4) ...{
           ListTile(
-            title: Text('保健室'),
+            title: const Text('保健室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 1,
+                      builder: (context) => const MapPage(
+                            floor: "images/hoken.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('図書館'),
+            title: const Text('図書館'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 1,
+                      builder: (context) => const MapPage(
+                            floor: "images/tosho.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('カフェテリア'),
+            title: const Text('カフェテリア'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 1,
+                      builder: (context) => const MapPage(
+                            floor: "images/kafe.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('ラーニングコモンズ'),
+            title: const Text('ラーニングコモンズ'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/rakomo.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('講堂'),
+            title: const Text('講堂'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 5,
+                      builder: (context) => const MapPage(
+                            floor: "images/koudo.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('アトリウム'),
+            title: const Text('アトリウム'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 1,
+                      builder: (context) => const MapPage(
+                            floor: "images/ato.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('自習室'),
+            title: const Text('自習室'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 2,
+                      builder: (context) => const MapPage(
+                            floor: "images/jishu.jpg",
                           )));
             },
           ),
           ListTile(
-            title: Text('トレーニングルーム'),
+            title: const Text('トレーニングルーム'),
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MapPage(
-                            floor: 4,
+                      builder: (context) => const MapPage(
+                            floor: "images/tore.jpg",
                           )));
             },
           ),
