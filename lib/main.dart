@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:horimap/rooms.dart';
+import 'package:horimap/Map.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,8 +25,6 @@ class MyHomepage extends StatelessWidget {
   static const double _tytleHeightRatio = 0.1;
   static const double _tytleBottomRatio = 0.1;
   static const double _buttonBottomRatio = 0.1;
-  static const double _imageHeightRatio = 0.1;
-  static const double _imageBottomRatio = 0.1;
   static const double _tytlesize = 0.1;
   static const double _buttonsize = 0.1;
   static int floor = 0;
@@ -159,105 +158,6 @@ class MyHomepage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class MapPage extends StatelessWidget {
-  final String floor;
-  const MapPage({super.key, required this.floor});
-  @override
-  Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('MAP Page'),
-      ),
-      body: Center(
-        child: Column(children: [
-          SizedBox(
-            height: height * MyHomepage._imageHeightRatio,
-          ),
-          Image.asset(floor),
-          SizedBox(
-            height: height * MyHomepage._imageBottomRatio,
-          ),
-        ]),
-      ),
-    );
-  }
-}
-
-class RoomListPage extends StatelessWidget {
-  static int list_num = 0;
-
-  const RoomListPage({super.key});
-  @override
-  Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('HoriMAP'),
-      ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: height * MyHomepage._tytleTopMarginRatio * 0.3,
-          ),
-          ListTile(
-            title: const Text('HR教室'),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const RoomListPage2(roomNUM: 1)));
-            },
-          ),
-          ListTile(
-            title: const Text('特別教室'),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const RoomListPage2(roomNUM: 2)));
-            },
-          ),
-          ListTile(
-            title: const Text('事務系'),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const RoomListPage2(roomNUM: 3)));
-            },
-          ),
-          ListTile(
-            title: const Text('その他'),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const RoomListPage2(roomNUM: 4)));
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class kensaku extends StatelessWidget {
-  static int list_num = 0;
-
-  const kensaku({super.key});
-  @override
-  Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Column(
-        children: [],
       ),
     );
   }

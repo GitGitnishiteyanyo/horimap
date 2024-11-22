@@ -1,5 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:horimap/main.dart';
+import 'package:horimap/Map.dart';
+
+class RoomListPage extends StatelessWidget {
+  static int list_num = 0;
+
+  const RoomListPage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('HoriMAP'),
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: height * RoomListPage2._tytleTopMarginRatio * 0.3,
+          ),
+          ListTile(
+            title: const Text('HR教室'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RoomListPage2(roomNUM: 1)));
+            },
+          ),
+          ListTile(
+            title: const Text('特別教室'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RoomListPage2(roomNUM: 2)));
+            },
+          ),
+          ListTile(
+            title: const Text('事務系'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RoomListPage2(roomNUM: 3)));
+            },
+          ),
+          ListTile(
+            title: const Text('その他'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RoomListPage2(roomNUM: 4)));
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class RoomListPage2 extends StatelessWidget {
   final int roomNUM;

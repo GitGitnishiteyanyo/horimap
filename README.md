@@ -1,6 +1,6 @@
 # horimap
 
-A new Flutter project.
+これは、京都市立堀川高校の簡素なマップアプリケーションです。
 
 ## Getting Started
 
