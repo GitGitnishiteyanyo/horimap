@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:horimap/rooms.dart';
 
 void main() {
@@ -129,6 +128,13 @@ class MyHomepage extends StatelessWidget {
                 style: TextStyle(fontSize: 30.0),
               ),
             ),
+            const Spacer(),
+            Container(
+              height: height * 0.1,
+              width: width * 0.1,
+              child: Image.asset("images/densan.png"),
+            ),
+            const Text("制作者 : Alice（電算機研究部）"),
             SizedBox(
               height: height * _buttonBottomRatio,
             ),
@@ -143,10 +149,6 @@ class MyHomepage extends StatelessWidget {
                 color: Colors.blue,
               ),
               child: Text('Menu'),
-            ),
-            ListTile(
-              title: const Text('検索'),
-              onTap: () {},
             ),
             ListTile(
               title: const Text('教室リスト'),
@@ -182,13 +184,6 @@ class MapPage extends StatelessWidget {
           SizedBox(
             height: height * MyHomepage._imageBottomRatio,
           ),
-          ElevatedButton(
-            child: const Text("前の画面に戻る"),
-            onPressed: () {
-              // ここにボタンを押した時に呼ばれるコードを書く
-              Navigator.pop(context);
-            },
-          ),
         ]),
       ),
     );
@@ -203,17 +198,11 @@ class RoomListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('HoriMAP'),
+      ),
       body: Column(
         children: [
-          SizedBox(
-            height: height * MyHomepage._tytleTopMarginRatio,
-          ),
-          ListTile(
-            title: const Text("<back"),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
           SizedBox(
             height: height * MyHomepage._tytleTopMarginRatio * 0.3,
           ),

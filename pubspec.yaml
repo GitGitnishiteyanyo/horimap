@@ -63,6 +63,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - images/densan.png 
     - images/1f.png
     - images/2f.png
     - images/3f.png
